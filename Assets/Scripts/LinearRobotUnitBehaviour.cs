@@ -23,6 +23,10 @@ public class LinearRobotUnitBehaviour : RobotUnit
     public float blockValue;
     public float blockAngle;
 
+    public float weightFloor;
+    public float floorValue;
+    public float floorAngle;
+
     void Update()
     {
 
@@ -70,6 +74,22 @@ public class LinearRobotUnitBehaviour : RobotUnit
 
         // apply to the ball
         applyForce(blockAngle, -blockValue); // go the opposite way
+
+
+
+
+
+
+        /**************************************************/
+
+        // force for floor
+        // get sensor data
+        floorAngle = floorDetector.GetAngleOfFloor();
+
+        floorValue = weightFloor * floorDetector.GetLinearOuput();
+
+        // apply to the ball
+        applyForce(floorAngle, -floorValue); // go the opposite way
     }
 
 

@@ -16,6 +16,7 @@ public class RobotUnit : MonoBehaviour
     public float timeElapsed = 0.0f;
     public ResourceDetectorScript resourcesDetector;
     public BlockDetectorScript blockDetector;
+    public FloorDetectorScript floorDetector;
     private List<Tuple<float, float>> listAngleStr;
     public bool debugMode = true;
     protected int maxObjects = 0;
