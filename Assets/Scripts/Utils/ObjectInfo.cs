@@ -1,5 +1,5 @@
 ﻿using System;
-public class ObjectInfo : IEquatable<ObjectInfo>, IComparable<ObjectInfo>
+public class ObjectInfo :  IComparable<ObjectInfo>
 {
     public float distance {get;}
     public float angle { get; }
@@ -10,10 +10,6 @@ public class ObjectInfo : IEquatable<ObjectInfo>, IComparable<ObjectInfo>
         this.angle = angle;
     }
 
-    public bool Equals(ObjectInfo other)
-    {
-        throw new NotImplementedException();
-    }
 
     public int CompareTo(ObjectInfo other)
     {

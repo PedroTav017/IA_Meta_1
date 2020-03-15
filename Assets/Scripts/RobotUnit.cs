@@ -20,6 +20,8 @@ public class RobotUnit : MonoBehaviour
     private List<Tuple<float, float>> listAngleStr;
     public bool debugMode = true;
     protected int maxObjects = 0;
+    public float movementAngle;
+    public float movemenStrength;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +45,9 @@ public class RobotUnit : MonoBehaviour
         foreach(Tuple<float,float> tmp in listAngleStr){
             
             float angle = tmp.Item1;
+            movementAngle = angle + 180;
             float strength = tmp.Item2;
+            movemenStrength = strength;
             angle *= Mathf.Deg2Rad;
             float xComponent = Mathf.Cos(angle);
             float zComponent = Mathf.Sin(angle);

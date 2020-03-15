@@ -56,11 +56,13 @@ public class LinearRobotUnitBehaviour : RobotUnit
 
         resouceAngle = resourcesDetector.GetAngleToClosestResource();
 
+        //bool avoidVoid = floorDetector.hasFloor;
+
         // apply to the ball
-        applyForce(resouceAngle, strengthResource); // go towards
+        //if (avoidVoid) applyForce(resouceAngle, strengthResource); // go towards
+        //else applyForce(resouceAngle+180, 2*strengthResource);
 
-
-
+        applyForce(resouceAngle, strengthResource);
 
 
 
@@ -89,7 +91,8 @@ public class LinearRobotUnitBehaviour : RobotUnit
         floorValue = weightFloor * floorDetector.GetLinearOuput();
 
         // apply to the ball
-        applyForce(floorAngle, -floorValue); // go the opposite way
+        // bool avoidVoid = floorDetector.hasFloor;
+        applyForce(floorAngle, 0); // go the opposite way
     }
 
 
